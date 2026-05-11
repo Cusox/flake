@@ -1,4 +1,4 @@
-{ inputs, pkgs, user, ... }:
+{ pkgs, hostName, user, ... }:
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -9,6 +9,8 @@
     neovim
     git
   ];
+
+  networking.hostName = hostName;
 
   users.users = {
     ${user.username} = {

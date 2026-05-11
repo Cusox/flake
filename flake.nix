@@ -15,21 +15,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: 
+  outputs = inputs: 
   let
-    lib = nixpkgs.lib;
-
-    user = {
-      username = "cusox";
-      useremail = "cusoxlee@gmail.com";
-    };
+    hosts = import ./config/hosts.nix;
 
     args = {
-      inherit
-        inputs
-	lib
-	user
-	;
+      inherit inputs hosts;
     };
   in
   {

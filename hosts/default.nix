@@ -1,5 +1,5 @@
 args:
 let
-  baguetteHosts = import ./x86_64-baguette args;
+  baguetteHosts = import ./baguette args;
 in
   baguetteHosts
