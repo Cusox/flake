@@ -20,7 +20,7 @@
     lib = nixpkgs.lib;
 
     user = {
-      username = "Cusox";
+      username = "cusox";
       useremail = "cusoxlee@gmail.com";
     };
 
