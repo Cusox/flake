@@ -1,7 +1,7 @@
 { inputs, user, pkgs, ...}:
 {
   imports = [
-    ../../../home/cli/nixCats
+    ../../../home/tui/nixCats
   ];
 
   home = {
