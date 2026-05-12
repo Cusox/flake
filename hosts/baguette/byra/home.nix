@@ -1,6 +1,7 @@
 { inputs, user, pkgs, ...}:
 {
   imports = [
+    ../../../home/fonts.nix
     ../../../home/tui/nixCats
   ];
 
