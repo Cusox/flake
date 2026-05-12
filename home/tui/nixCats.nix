@@ -1,7 +1,8 @@
 { config, lib, inputs, ... }: 
 let
   utils = inputs.nixCats.utils;
-in {
+in 
+{
   imports = [
     inputs.nixCats.homeModule
   ];
@@ -16,7 +17,7 @@ in {
 
       packageNames = [ "nvim-nixCats" ];
 
-      luaPath = ../../../config/nvim;
+      luaPath = ../../config/nvim;
 
       categoryDefinitions.replace = ({ pkgs, settings, categories, extra, name, mkPlugin, ... }@packageDef: {
         lspsAndRuntimeDeps = {

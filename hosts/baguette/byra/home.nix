@@ -2,7 +2,8 @@
 {
   imports = [
     ../../../home/fonts.nix
-    ../../../home/tui/nixCats
+    ../../../home/gui/kitty.nix
+    ../../../home/tui/nixCats.nix
   ];
 
   home = {
@@ -10,6 +11,7 @@
     homeDirectory = "/home/${user.username}";
 
     packages = with pkgs; [
+      kitty
     ];
 
     stateVersion = "25.11";
