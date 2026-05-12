@@ -6,8 +6,10 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    neovim
     git
+    curl
+    wget
+    neovim
   ];
 
   networking.hostName = hostName;
@@ -23,5 +25,5 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 }

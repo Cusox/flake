@@ -1,0 +1,5 @@
+require("basic")
+require("keymap")
+require("autocmd")
+require("pack-ui")
+require("plugins")
