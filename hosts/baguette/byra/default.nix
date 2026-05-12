@@ -5,6 +5,8 @@
     "flakes"
   ];
 
+  hardware.graphics.enable = true;
+
   environment.systemPackages = with pkgs; [
     git
     curl
