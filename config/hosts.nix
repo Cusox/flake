@@ -5,9 +5,9 @@ let
   arml = "aarch64-linux";
 in
 {
-  byra = {
+  penguin = {
     dir = "baguette";
     arch = x86l;
-    user = users.default;
+    user = users.baguette;
   };
 }
