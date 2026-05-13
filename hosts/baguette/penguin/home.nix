@@ -2,6 +2,7 @@
 {
   imports = [
     ../../../home/fonts.nix
+    ../../../home/cli/git-credential-oauth.nix
     ../../../home/gui/kitty.nix
     ../../../home/tui/nixCats.nix
   ];
@@ -11,6 +12,7 @@
     homeDirectory = "/home/${user.username}";
 
     packages = with pkgs; [
+      git-credential-oauth
       kitty
     ];
 
