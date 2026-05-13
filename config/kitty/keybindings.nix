@@ -1,4 +1,8 @@
 {
+    #  ─────────── Clipboard ────────────
+
+    "ctrl+v" = "paste_from_clipboard";
+
     #  ───────── Tab Management ─────────
 
     "ctrl+q" = "close_tab";
