@@ -23,13 +23,14 @@ let
     modules = [ 
       { nixpkgs.config.allowUnfree = true; }
       ./${name} 
+      ./${name}/garcon.nix
       nixos-crostini.nixosModules.baguette
       home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
-	home-manager.useUserPackages = true;
-	home-manager.extraSpecialArgs = specialArgs;
-	home-manager.users.${host.user.username} = ./${name}/home.nix;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = specialArgs;
+        home-manager.users.${host.user.username} = ./${name}/home.nix;
       }
     ];
   };
