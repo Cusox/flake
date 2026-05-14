@@ -52,7 +52,7 @@ in
 
             pull.rebase = true;
 
-            include.path = "~/.config/delta/themes/nordic.gitconfig"
+            include.path = "~/.config/delta/themes/nordic.gitconfig";
 
             mergetool = {
                 keepBackup = false;

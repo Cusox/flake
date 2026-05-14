@@ -1,5 +1,6 @@
 {
     xdg.configFile."delta/themes/nordic.gitconfig".source = ../../config/delta/themes/nordic.gitconfig;
+
     programs.delta = {
         enable = true;
         options = {
@@ -11,5 +12,5 @@
         };
         enableGitIntegration = true;
         enableJujutsuIntegration = true;
-    }
+    };
 }
