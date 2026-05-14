@@ -1,5 +1,5 @@
 {
-    xdg.configFile."delta/themes/nordic.gitconfig".source = ../../config/delta/themes/nordic.gitconfig;
+    home.file.".config/delta/themes/nordic.gitconfig".source = ../../config/delta/themes/nordic.gitconfig;
 
     programs.delta = {
         enable = true;

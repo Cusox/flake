@@ -1,5 +1,5 @@
 {
-    xdg.configFile."kitty/themes/nordic.conf".source = ../../config/kitty/themes/nordic.conf;
+    home.file.".config/kitty/themes/nordic.conf".source = ../../config/kitty/themes/nordic.conf;
 
     programs.kitty = {
         enable = true;
