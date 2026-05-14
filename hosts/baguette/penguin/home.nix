@@ -10,14 +10,8 @@
 
   home = {
     username = user.username;
-    homeDirectory = "/home/${user.username}";
 
-    packages = with pkgs; [
-      delta
-      git
-      git-credential-oauth
-      kitty
-    ];
+    homeDirectory = "/home/${user.username}";
 
     stateVersion = "25.11";
   };
