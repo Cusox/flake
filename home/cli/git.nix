@@ -52,9 +52,11 @@ in
 
             pull.rebase = true;
 
+            include.path = "~/.config/delta/themes/nordic.gitconfig"
+
             mergetool = {
                 keepBackup = false;
-                conflictstyle = zdiff3;
+                conflictstyle = "zdiff3";
             };
         };
 
