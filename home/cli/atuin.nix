@@ -7,7 +7,7 @@
     settings = import ../../config/atuin/settings.nix;
 
     themes = {
-      nordic = ./themes/nordic.toml;
+      nordic = ../../config/atuin/themes/nordic.toml;
     };
 
     daemon = {
