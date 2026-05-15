@@ -5,7 +5,9 @@ local gh = function(x)
 end
 
 function M.setup()
-	vim.pack.add(gh("neovim/nvim-lspconfig"))
+	vim.pack.add({
+        gh("neovim/nvim-lspconfig")
+    })
 
 	vim.lsp.enable("bashls")
 	vim.lsp.enable("clangd")
