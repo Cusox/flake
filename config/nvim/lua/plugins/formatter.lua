@@ -22,6 +22,7 @@ function M.setup()
 					cmake = { "gersemi" },
 					cpp = { "clang-format" },
 					lua = { "stylua" },
+					nix = { "nixfmt" },
 					python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
 					yaml = { "yamlfmt" },
 				},

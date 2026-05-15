@@ -41,6 +41,7 @@
             # Formatter
             shfmt
             gersemi
+            nixfmt
             ruff
             stylua
             yamlfmt
