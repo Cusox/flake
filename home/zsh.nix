@@ -1,0 +1,38 @@
+{
+  programs.zsh = {
+    enable = true;
+
+    shellAliases = {
+      "cat" = "bat";
+      "grep" = "rg";
+      "ls" = "eza --icons -h";
+    };
+
+    syntaxHighlighting = {
+      enable = true;
+
+      highlighters = [
+        "main"
+        "brackets"
+        "cursor"
+        "root"
+      ];
+    };
+
+    autosuggestions = {
+      enable = true;
+    };
+
+    sessionVariables = {
+      LESSCHARSET = "utf-8";
+    };
+
+    history = {
+      append = true;
+      size = 50000;
+      save = 50000;
+      ignoreAllDups = true;
+      expireDuplicatesFirst = true;
+    };
+  };
+}

@@ -1,4 +1,9 @@
-{ pkgs, hostName, user, ... }:
+{
+  pkgs,
+  hostName,
+  user,
+  ...
+}:
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -7,12 +12,16 @@
 
   hardware.graphics.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    git
-    curl
-    wget
-    neovim
-  ];
+  environment = {
+    pathToLink = [ "/share/zsh" ];
+
+    systemPackages = with pkgs; [
+      git
+      curl
+      wget
+      neovim
+    ];
+  };
 
   networking.hostName = hostName;
 
