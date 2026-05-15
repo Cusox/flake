@@ -5,7 +5,6 @@
     shellAliases = {
       "cat" = "bat";
       "grep" = "rg";
-      "ls" = "eza --icons -h";
     };
 
     syntaxHighlighting = {
