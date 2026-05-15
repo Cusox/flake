@@ -1,3 +1,5 @@
+{ config, lib, ... }:
+
 {
   programs.atuin = {
     enable = true;
@@ -15,4 +17,8 @@
       logLevel = "info";
     };
   };
+
+  programs.zsh.initContent = lib.mkBefore ''
+    eval "$(${lib.getExe config.programs.atuin.package} hex init zsh)"
+  '';
 }
