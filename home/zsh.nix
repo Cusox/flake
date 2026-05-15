@@ -19,7 +19,7 @@
       ];
     };
 
-    autosuggestions = {
+    autosuggestion = {
       enable = true;
     };
 
