@@ -1,10 +1,11 @@
 { ... }:
 
 {
-    imports = [
-        ./cli
-        ./gui
-        ./tui
-        ./fonts.nix
-    ];
+  imports = [
+    ./cli
+    ./gui
+    ./tui
+    ./fonts.nix
+    ./zsh.nix
+  ];
 }

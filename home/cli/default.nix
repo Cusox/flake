@@ -1,8 +1,9 @@
 { ... }:
 
 {
-    imports = [
-       ./delta.nix 
-       ./git.nix
-    ];
+  imports = [
+    ./atuin.nix
+    ./delta.nix
+    ./git.nix
+  ];
 }

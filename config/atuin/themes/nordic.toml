@@ -1,0 +1,13 @@
+[theme]
+name = "nordic"
+
+[colors]
+AlertInfo = "#88C0D0"
+AlertWarn = "#EBCB8B"
+AlertError = "#C5727A"
+Annotation = "#4C566A"
+Base = "#C0C8D8"
+Guidance = "#B1C89D"
+Important = "#D08770"
+Title = "#D8DEE9"
+Muted = "#60728A"
