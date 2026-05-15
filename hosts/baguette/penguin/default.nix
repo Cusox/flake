@@ -31,6 +31,7 @@
       uid = 1000;
       linger = true;
       extraGroups = [ "wheel" ];
+      shell = pkgs.zsh;
     };
   };
 
