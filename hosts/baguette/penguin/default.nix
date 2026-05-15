@@ -32,6 +32,7 @@
       linger = true;
       extraGroups = [ "wheel" ];
       shell = pkgs.zsh;
+      ignoreShellProgramCheck = true;
     };
   };
 

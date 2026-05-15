@@ -1,4 +1,7 @@
-{ inputs, user, pkgs, ...}:
+{
+  user,
+  ...
+}:
 {
   imports = [
     ../../../home
