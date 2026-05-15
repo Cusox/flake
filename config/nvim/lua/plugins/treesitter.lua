@@ -9,7 +9,7 @@ function M.setup()
 	vim.api.nvim_create_autocmd("FileType", {
 		desc = "enable treesitter, install parser if missing",
 		callback = function()
-            vim.treesitter.start)
+            pcall(vim.treesitter.start)
 		end,
 	})
 
