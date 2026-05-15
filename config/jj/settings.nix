@@ -1,6 +1,6 @@
 let
   users = import ../users.nix;
-  user = users.default;
+  user = users.vcs;
 in
 {
   user = {
