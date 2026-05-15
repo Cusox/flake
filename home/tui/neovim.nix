@@ -74,6 +74,7 @@
                 p.markdown
                 p.markdown_inline
                 p.ninja
+                p.nix
                 p.query
                 p.regex
                 p.rust
