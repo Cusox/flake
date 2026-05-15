@@ -17,7 +17,9 @@
 
         extraPackages = with pkgs; [
             # Tool
+            fd
             fzf
+            ripgrep
 
             # Tree-sitter CLI
             tree-sitter
