@@ -6,8 +6,8 @@ end
 
 function M.setup()
 	vim.pack.add({
-        gh("neovim/nvim-lspconfig")
-    })
+		gh("neovim/nvim-lspconfig"),
+	})
 
 	vim.lsp.enable("bashls")
 	vim.lsp.enable("clangd")
@@ -19,6 +19,7 @@ function M.setup()
 	vim.lsp.enable("jsonls")
 	vim.lsp.enable("lua_ls")
 	vim.lsp.enable("neocmake")
+	vim.lsp.enable("nixd")
 	vim.lsp.enable("ty")
 end
 

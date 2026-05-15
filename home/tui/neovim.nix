@@ -33,6 +33,7 @@
             vscode-json-languageserver
             lua-language-server
             neocmakelsp
+            nixd
             ty
 
             # Formatter
