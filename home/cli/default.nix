@@ -9,6 +9,7 @@
     ./fd.nix
     ./fzf.nix
     ./git.nix
+    ./jj.nix
     ./ripgrep.nix
   ];
 }
