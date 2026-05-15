@@ -13,7 +13,7 @@
   hardware.graphics.enable = true;
 
   environment = {
-    pathToLink = [ "/share/zsh" ];
+    pathsToLink = [ "/share/zsh" ];
 
     systemPackages = with pkgs; [
       git
