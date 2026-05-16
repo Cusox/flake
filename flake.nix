@@ -13,17 +13,20 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
-  outputs = inputs: 
-  let
-    hosts = import ./config/hosts.nix;
+  outputs =
+    inputs:
+    let
+      hosts = import ./config/hosts.nix;
 
-    args = {
-      inherit inputs hosts;
+      args = {
+        inherit inputs hosts;
+      };
+    in
+    {
+      nixosConfigurations = import ./hosts args;
     };
-  in
-  {
-    nixosConfigurations = import ./hosts args;
-  };
 }
