@@ -12,5 +12,6 @@
     ./jj.nix
     ./pay-respects.nix
     ./ripgrep.nix
+    ./zoxide.nix
   ];
 }
