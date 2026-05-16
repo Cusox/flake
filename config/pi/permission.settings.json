@@ -1,0 +1,17 @@
+{
+    "defaultMode": "ask",
+    "allow": [
+        "read",
+        "bash(git *)"
+    ],
+    "deny": [
+        "bash(rm -rf *)"
+    ],
+    "ask": [
+        "write",
+        "edit"
+    ],
+    "keybindings": {
+        "autoAcceptEdits": "ctrl+shift+a"
+    }
+}
