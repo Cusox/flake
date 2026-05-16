@@ -1,21 +1,21 @@
+{ lib, pkgs, ... }:
+
 {
+  home.packages = with pkgs; [
+    bat
+    ripgrep
+
+    zsh-fzf-tab
+    zsh-vi-mode
+    zsh-fast-syntax-highlighting
+  ];
+
   programs.zsh = {
     enable = true;
 
     shellAliases = {
       "cat" = "bat";
       "grep" = "rg";
-    };
-
-    syntaxHighlighting = {
-      enable = true;
-
-      highlighters = [
-        "main"
-        "brackets"
-        "cursor"
-        "root"
-      ];
     };
 
     autosuggestion = {
@@ -25,6 +25,16 @@
     sessionVariables = {
       LESSCHARSET = "utf-8";
     };
+
+    initContent = lib.mkMerge [
+      ''
+        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      ''
+      (lib.mkAfter ''
+        source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+      '')
+    ];
 
     history = {
       append = true;
