@@ -6,8 +6,13 @@ let
 in
 {
   penguin = {
-    dir = "baguette";
+    type = "baguette";
     arch = x86l;
     user = users.baguette;
+  };
+  altra = {
+    type = "wsl";
+    arch = x86l;
+    user = users.default;
   };
 }

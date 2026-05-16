@@ -6,9 +6,9 @@
   ...
 }:
 let
-  nixos-crostini = inputs.nixos-crostini;
+  nixos-wsl = inputs.nixos-wsl;
 
-  mkBaguetteHost =
+  mkWSLHost =
     name: host:
     let
       system = host.arch;
@@ -24,9 +24,8 @@ let
 
       modules = [
         ./${name}
-        ./${name}/garcon.nix
 
-        nixos-crostini.nixosModules.baguette
+        nixos-wsl.nixosModules.default
 
         {
           nixpkgs.config.allowUnfreePredicate =
@@ -48,5 +47,6 @@ let
         }
       ];
     };
+
 in
-lib.mapAttrs mkBaguetteHost hosts
+lib.mapAttrs mkWSLHost hosts
