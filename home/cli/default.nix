@@ -10,6 +10,7 @@
     ./fzf.nix
     ./git.nix
     ./jj.nix
+    ./pay-respects.nix
     ./ripgrep.nix
   ];
 }
