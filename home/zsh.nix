@@ -3,6 +3,7 @@
 {
   home.packages = with pkgs; [
     # Tools
+    dust
     procs
 
     # Zsh Plugins
