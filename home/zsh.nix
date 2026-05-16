@@ -2,13 +2,28 @@
 
 {
   home.packages = with pkgs; [
-    bat
-    ripgrep
+    # Tools
+    procs
 
+    # Zsh Plugins
     zsh-fzf-tab
     zsh-vi-mode
     zsh-fast-syntax-highlighting
   ];
+
+  programs.bat = {
+    enable = true;
+
+    config = {
+      theme = "Nord";
+      italic-text = "always";
+      style = "full";
+    };
+  };
+
+  programs.ripgrep = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -16,6 +31,7 @@
     shellAliases = {
       "cat" = "bat";
       "grep" = "rg";
+      "ps" = "procs";
     };
 
     autosuggestion = {
