@@ -11,6 +11,8 @@
     ./jj.nix
     ./neovim.nix
     ./pay-respects.nix
+    ./starship.nix
     ./zoxide.nix
+    ./zsh.nix
   ];
 }
