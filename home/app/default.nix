@@ -1,7 +1,8 @@
 { ... }:
 
 {
-    imports = [
-        ./kitty.nix
-    ];
+  imports = [
+    ./rclone.nix
+    ./kitty.nix
+  ];
 }
