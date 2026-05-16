@@ -9,6 +9,7 @@
     ./fzf.nix
     ./git.nix
     ./jj.nix
+    ./neovim.nix
     ./pay-respects.nix
     ./zoxide.nix
   ];

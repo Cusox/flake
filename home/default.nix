@@ -2,9 +2,8 @@
 
 {
   imports = [
-    ./cli
-    ./gui
-    ./tui
+    ./app
+    ./base
     ./fonts.nix
     ./starship.nix
     ./zsh.nix
