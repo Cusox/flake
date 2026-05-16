@@ -22,9 +22,9 @@
     };
   };
 
-  programs.ripgrep = {
-    enable = true;
-  };
+  programs.fastfetch.enable = true;
+
+  programs.ripgrep.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -50,6 +50,9 @@
       ''
       (lib.mkAfter ''
         source ${pkgs.zsh-fast-syntax-highlighting}/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+      '')
+      (lib.mkOrder 2000 ''
+        fastfetch
       '')
     ];
 
