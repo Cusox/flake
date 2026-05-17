@@ -10,8 +10,16 @@
     "flakes"
   ];
 
-  wsl.enable = true;
-  wsl.defaultUser = user.username;
+  wsl = {
+    enable = true;
+    defaultUser = user.username;
+
+    wslConf = {
+      network = {
+        generateResolvConf = false;
+      };
+    };
+  };
 
   networking.hostName = hostName;
 
@@ -23,6 +31,10 @@
       curl
       wget
     ];
+
+    etc."resolv.conf".txt = ''
+      nameserver 192.168.31.3
+    '';
   };
 
   programs.zsh.enable = true;
