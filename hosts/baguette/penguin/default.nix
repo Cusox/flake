@@ -22,7 +22,19 @@
       curl
       wget
     ];
+
+    sessionVariables = {
+      LD_LIBRARY_PATH = [
+        "/run/opengl-driver/lib"
+        "${pkgs.openssl.out}/lib"
+      ];
+
+      LIBGL_DRIVERS_PATH = "${pkgs.mesa}/lib/dri";
+      GBM_BACKENDS_PATH = "${pkgs.mesa}/lib/gbm";
+    };
   };
+
+  services.dbus.enable = true;
 
   programs.zsh.enable = true;
 
