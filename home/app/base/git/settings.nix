@@ -1,5 +1,5 @@
 let
-  users = import ../users.nix;
+  users = import ../../../../config/users.nix;
   user = users.vcs;
 in
 
