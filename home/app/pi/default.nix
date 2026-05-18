@@ -9,10 +9,10 @@ in
 
   home.file = {
     ".pi/agent/extensions" = {
-      source = ../config/pi/extensions;
+      source = ./pi/extensions;
       recursive = true;
     };
 
-    ".pi/agent/permission.settings.json".source = ../config/pi/permission.settings.json;
+    ".pi/agent/permission.settings.json".source = ./pi/permission.settings.json;
   };
 }

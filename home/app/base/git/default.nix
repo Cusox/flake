@@ -7,7 +7,7 @@
       signByDefault = null;
       signer = null;
     };
-    settings = import ../../config/git/settings.nix;
+    settings = import ./settings.nix;
   };
 
   programs.git-credential-oauth = {

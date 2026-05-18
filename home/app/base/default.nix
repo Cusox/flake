@@ -2,14 +2,15 @@
 
 {
   imports = [
-    ./atuin.nix
-    ./delta.nix
+    ./atuin
+    ./delta
+    ./git
+    ./jj
+    ./neovim
+
     ./eza.nix
     ./fd.nix
     ./fzf.nix
-    ./git.nix
-    ./jj.nix
-    ./neovim.nix
     ./pay-respects.nix
     ./starship.nix
     ./zoxide.nix

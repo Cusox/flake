@@ -2,6 +2,6 @@
   programs.jujutsu = {
     enable = true;
 
-    settings = import ../../config/jj/settings.nix;
+    settings = import ./settings.nix;
   };
 }

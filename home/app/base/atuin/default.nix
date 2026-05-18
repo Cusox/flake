@@ -6,10 +6,10 @@
 
     enableZshIntegration = true;
 
-    settings = import ../../config/atuin/settings.nix;
+    settings = import ./settings.nix;
 
     themes = {
-      nordic = ../../config/atuin/themes/nordic.toml;
+      nordic = ./themes/nordic.toml;
     };
 
     daemon = {
