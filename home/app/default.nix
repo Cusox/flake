@@ -5,6 +5,7 @@
     ./base
 
     ./kitty
+    ./rio
     ./pi
 
     ./fonts.nix
