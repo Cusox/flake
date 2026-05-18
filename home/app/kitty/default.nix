@@ -4,7 +4,7 @@
   programs.kitty = {
     enable = true;
     font = {
-      name = "JuliaMono Nerd Font";
+      name = "Maple Mono NF CN";
       size = 14;
     };
     enableGitIntegration = true;

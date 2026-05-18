@@ -1,40 +1,41 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 let
   juliaMonoNerd = pkgs.stdenvNoCC.mkDerivation {
-      pname = "julia-mono-nerd-font";
-      version = pkgs.julia-mono.version or "unknown";
+    pname = "julia-mono-nerd-font";
+    version = pkgs.julia-mono.version or "unknown";
 
-      nativeBuildInputs = [
-        pkgs.nerd-font-patcher
-      ];
+    nativeBuildInputs = [
+      pkgs.nerd-font-patcher
+    ];
 
-      dontUnpack = true;
+    dontUnpack = true;
 
-      installPhase = ''
-        runHook preInstall
+    installPhase = ''
+      runHook preInstall
 
-        original_dir="$TMPDIR/juliamono-original"
-        patched_dir="$out/share/fonts/truetype/juliamono-nerd"
+      original_dir="$TMPDIR/juliamono-original"
+      patched_dir="$out/share/fonts/truetype/juliamono-nerd"
 
-        mkdir -p "$original_dir" "patched_dir"
+      mkdir -p "$original_dir" "patched_dir"
 
-        cp -v ${pkgs.julia-mono}/share/fonts/truetype/*.ttf "$original_dir/"
+      cp -v ${pkgs.julia-mono}/share/fonts/truetype/*.ttf "$original_dir/"
 
-        for f in "$original_dir"/*.ttf; do
-            nerd-font-patcher \
-              --complete \
-              --outputdir "$patched_dir" \
-              "$f"
-        done
+      for f in "$original_dir"/*.ttf; do
+          nerd-font-patcher \
+            --complete \
+            --outputdir "$patched_dir" \
+            "$f"
+      done
 
-        runHook postInstall
-      '';
+      runHook postInstall
+    '';
   };
 in
 {
-    fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = true;
 
-    home.packages = [
-      juliaMonoNerd
-    ];
+  home.packages = [
+    # juliaMonoNerd
+    pkgs.maple-mono.NF-CN-unhinted
+  ];
 }

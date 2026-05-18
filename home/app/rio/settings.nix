@@ -28,7 +28,7 @@ in
 
   fonts = {
     size = 18;
-    family = "JuliaMono Nerd Font";
+    family = "Maple Mono NF CN";
     use-drawable-chars = true;
   };
 
