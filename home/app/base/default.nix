@@ -6,7 +6,7 @@
     ./delta
     ./git
     ./jj
-    ./neovim
+    ./nvim
 
     ./eza.nix
     ./fd.nix
