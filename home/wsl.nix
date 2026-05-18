@@ -4,8 +4,6 @@
   imports = [
     ./app/base
 
-    ./app/rio
-
-    ./app/fonts.nix
+    ./app/rio/windows-config.nix
   ];
 }
