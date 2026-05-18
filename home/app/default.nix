@@ -4,8 +4,10 @@
   imports = [
     ./base
 
+    ./alacritty
     ./kitty
     ./rio
+
     ./pi
 
     ./fonts.nix
