@@ -3,7 +3,9 @@
 let
   settings = import ./settings.nix pkgs;
 
-  configToml = pkgs.writeText "rio-config.toml" (lib.generators.toTOML { } settings);
+  tomlFormat = pkgs.formats.toml { };
+
+  configToml = tomlFormat.generate "rio-config.toml" settings;
 
   windowsUser = "cusox";
   windowsRioDir = "/mnt/c/Users/${windowsUser}/AppData/Local/rio";
