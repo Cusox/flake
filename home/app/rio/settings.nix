@@ -27,12 +27,10 @@ in
       };
 
   fonts = {
-    size = 16;
+    size = 18;
     family = "JuliaMono Nerd Font";
     use-drawable-chars = true;
   };
-
-  line-height = 1.5;
 
   hide-mouse-cursor-when-typing = true;
 
