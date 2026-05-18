@@ -1,5 +1,11 @@
-{ pkgs, ... }:
-
+{
+  pkgs,
+  target ? "linux",
+  ...
+}:
+let
+  isWindows = target == "windows";
+in
 {
   copy-on-select = true;
 
@@ -8,10 +14,17 @@
     enable-log-file = false;
   };
 
-  editor = {
-    program = "${pkgs.neovim}/bin/nvim";
-    args = [ ];
-  };
+  editor =
+    if isWindows then
+      {
+        program = "nvim";
+        args = [ ];
+      }
+    else
+      {
+        program = "${pkgs.neovim}/bin/nvim";
+        args = [ ];
+      };
 
   fonts = {
     size = 16;
@@ -32,7 +45,7 @@
 
   theme = "nordic";
 
-  planform = {
+  platform = {
     windows = {
       shell = {
         program = "pwsh";
