@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    ../../../home
+    ../../../home/baguette.nix
   ];
 
   home = {

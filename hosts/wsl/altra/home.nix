@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    ../../../home
+    ../../../home/wsl.nix
   ];
 
   home = {
