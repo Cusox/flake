@@ -15,4 +15,9 @@ in
     arch = x86l;
     user = users.default;
   };
+  omit = {
+    type = "wsl";
+    arch = x86l;
+    user = users.default;
+  };
 }
