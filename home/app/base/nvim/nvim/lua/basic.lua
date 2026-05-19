@@ -14,6 +14,8 @@ vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+vim.opt.swapfile = false
+
 vim.opt.clipboard = "unnamedplus"
 if os.getenv("SSH_TTY") ~= nil then
 	local osc52 = require("vim.ui.clipboard.osc52")
