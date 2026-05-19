@@ -4,20 +4,21 @@ let
 
   home-manager = inputs.home-manager;
 
-  baguetteHosts = import ./baguette (
-    args
-    // {
-      inherit lib home-manager;
-      hosts = lib.filterAttrs (name: host: host.type == "baguette") hosts;
-    }
-  );
+  mkHosts =
+    type: path:
+    import path (
+      args
+      // {
+        inherit lib home-manager;
+        hosts = lib.filterAttrs (_name: host: host.type == type) hosts;
+      }
+    );
 
-  wslHosts = import ./wsl (
-    args
-    // {
-      inherit lib home-manager;
-      hosts = lib.filterAttrs (name: host: host.type == "wsl") hosts;
-    }
-  );
+  baguetteHosts = mkHosts "baguette" ./baguette;
+  wslHosts = mkHosts "wsl" ./wsl;
+  homeHosts = mkHosts "home" ./home;
 in
-baguetteHosts // wslHosts
+{
+  nixosConfigurations = baguetteHosts // wslHosts;
+  homeConfigurations = homeHosts;
+}

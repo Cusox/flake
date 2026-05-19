@@ -27,8 +27,11 @@
       args = {
         inherit inputs hosts;
       };
+
+      hostOutputs = import ./hosts args;
     in
     {
-      nixosConfigurations = import ./hosts args;
+      nixosConfigurations = hostOutputs.nixosConfigurations;
+      homeConfigurations = hostOutputs.homeConfigurations;
     };
 }

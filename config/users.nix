@@ -11,4 +11,8 @@
     username = "chronos";
     useremail = "cusoxlee@gmail.com";
   };
+  gpu = {
+    username = "jiaji";
+    useremail = "cusoxlee@gmail.com";
+  };
 }
