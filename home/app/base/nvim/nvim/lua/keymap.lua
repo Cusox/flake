@@ -7,7 +7,8 @@ local map = function(mode, lhs, rhs, opts)
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
 
---- Normal Mode ---
+--  ──────────────── Normal Mode ─────────────────
+
 -- Better Up/Down --
 map("n", "j", [[v:count ? 'j' : 'gj']], { desc = "Down", expr = true })
 map("n", "k", [[v:count ? 'k' : 'gk']], { desc = "Up", expr = true })
@@ -51,11 +52,12 @@ map("n", "<Leader>bh", "<CMD>bprevious<CR>", { desc = "Previous Buffer" })
 map("n", "<Leader>bl", "<CMD>bnext<CR>", { desc = "Next Buffer" })
 map("n", "<Leader>bq", "<CMD>bd<CR>", { desc = "Delete Buffer" })
 
---- Terminal Mode ---
--- ESC --
+--  ─────────────── Terminal Mode ────────────────
+
 map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Terminal Escape", noremap = true })
 
---- Incremental Selection ---
+--  ─────────── Incremental Selection ────────────
+
 vim.keymap.set({ "n", "x", "o" }, "<A-[>", function()
 	require("vim.treesitter._select").select_prev(vim.v.count1)
 end, { desc = "Select previous node" })
@@ -79,7 +81,8 @@ vim.keymap.set({ "n", "x", "o" }, "<A-i>", function()
 	end
 end, { desc = "Select child (inner) node" })
 
---- Restart Neovim ---
+--  ─────────────── Restart Neovim ───────────────
+
 vim.keymap.set("n", "<leader>r", function()
 	local session = vim.fn.stdpath("state") .. "/restart_session.vim"
 	vim.cmd("mksession! " .. vim.fn.fnameescape(session))
