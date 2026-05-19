@@ -11,6 +11,7 @@
     ./eza.nix
     ./fd.nix
     ./fzf.nix
+    ./htop.nix
     ./pay-respects.nix
     ./starship.nix
     ./zoxide.nix
