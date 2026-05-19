@@ -7,7 +7,6 @@
     procs
 
     # Zsh Plugins
-    zsh-fzf-tab
     zsh-vi-mode
     zsh-fast-syntax-highlighting
   ];
@@ -45,7 +44,6 @@
 
     initContent = lib.mkMerge [
       ''
-        source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       ''
       (lib.mkAfter ''
