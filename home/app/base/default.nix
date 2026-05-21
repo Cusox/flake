@@ -13,6 +13,7 @@
     ./fzf.nix
     ./htop.nix
     ./pay-respects.nix
+    ./sops.nix
     ./starship.nix
     ./zoxide.nix
     ./zsh.nix

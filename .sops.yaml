@@ -1,0 +1,8 @@
+keys:
+  - &penguin age1r9eq9v6a0d42wud7whenfv4f29jgfv5t7qpzra0p36d6twsj2dhslppu56
+
+creation_rules:
+  - path_regex: ^secrets/default\.yaml$
+    key_groups:
+      - age:
+          - *penguin

@@ -25,6 +25,7 @@ let
       modules = [
         ./${name}
         ./${name}/garcon.nix
+        ./${name}/sops.nix
 
         nixos-crostini.nixosModules.baguette
 
