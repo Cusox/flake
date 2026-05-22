@@ -1,32 +1,39 @@
 {
   inputs,
-  lib,
-  home-manager,
   hosts,
+  modules ? [ ],
+  overlays ? [ ],
   ...
 }:
+
 let
+  nixpkgs = inputs.nixpkgs;
+  lib = nixpkgs.lib;
+  home-manager = inputs.home-manager;
+
   mkHomeHost =
-    name: host:
+    hostName: host:
     let
+      system = host.arch;
 
       pkgs = import inputs.nixpkgs {
-        system = host.arch;
-        config.allowUnfree = true;
+        inherit system;
+
+        overlays = overlays;
       };
 
-      specialArgs = {
-        inherit inputs hosts;
-        hostName = name;
+      extraSpecialArgs = {
+        inherit inputs hostName hosts;
         user = host.user;
       };
     in
     home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = specialArgs;
+      inherit extraSpecialArgs pkgs;
+
       modules = [
-        ./${name}/home.nix
-      ];
+        ./${hostName}/home.nix
+      ]
+      ++ modules;
     };
 in
 lib.mapAttrs mkHomeHost hosts

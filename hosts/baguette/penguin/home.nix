@@ -1,16 +1,17 @@
-{
-  user,
-  ...
-}:
+{ user, ... }:
+
+let
+  username = user.username;
+in
 {
   imports = [
-    ../../../home/baguette.nix
+    ../../../home/recipes/all
   ];
 
   home = {
-    username = user.username;
+    inherit username;
 
-    homeDirectory = "/home/${user.username}";
+    homeDirectory = "/home/${username}";
 
     stateVersion = "26.05";
   };

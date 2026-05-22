@@ -1,22 +1,34 @@
-{ inputs, hosts, ... }@args:
+{ inputs, hosts, ... }:
 let
   lib = inputs.nixpkgs.lib;
 
-  home-manager = inputs.home-manager;
-
   mkHosts =
-    type: path:
-    import path (
-      args
-      // {
-        inherit lib home-manager;
-        hosts = lib.filterAttrs (_name: host: host.type == type) hosts;
-      }
-    );
+    {
+      type,
+      path,
+      modules ? [ ],
+      overlays ? [ ],
+    }:
+    import path {
+      inherit inputs modules overlays;
+      hosts = lib.filterAttrs (_: host: host.type == type) hosts;
+    };
 
-  baguetteHosts = mkHosts "baguette" ./baguette;
-  wslHosts = mkHosts "wsl" ./wsl;
-  homeHosts = mkHosts "home" ./home;
+  baguetteHosts = mkHosts {
+    type = "baguette";
+    path = ./baguette;
+    modules = [ ../modules/system/minimal ];
+  };
+  wslHosts = mkHosts {
+    type = "wsl";
+    path = ./wsl;
+    modules = [ ../modules/system/minimal ];
+  };
+  homeHosts = mkHosts {
+    type = "home";
+    path = ./home;
+    modules = [ ../modules/nixpkgs.nix ];
+  };
 in
 {
   nixosConfigurations = baguetteHosts // wslHosts;

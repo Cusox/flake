@@ -1,4 +1,4 @@
-{ lib, pkgs, user, ... }:
+{ lib, user, ... }:
 
 let
   username = user.username;

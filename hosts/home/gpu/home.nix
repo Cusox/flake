@@ -1,16 +1,17 @@
-{
-  user,
-  ...
-}:
+{ user, ... }:
+
+let
+  username = user.username;
+in
 {
   imports = [
-    ../../../home/home.nix
+    ../../../home/recipes/home.nix
   ];
 
   home = {
-    username = user.username;
+    inherit username;
 
-    homeDirectory = "/home/${user.username}";
+    homeDirectory = "/home/${username}";
 
     stateVersion = "26.05";
   };

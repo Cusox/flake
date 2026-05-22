@@ -1,52 +1,39 @@
 {
   inputs,
-  lib,
-  home-manager,
   hosts,
+  modules ? [ ],
+  overlays ? [ ],
   ...
 }:
 let
+  nixpkgs = inputs.nixpkgs;
+  lib = nixpkgs.lib;
   nixos-wsl = inputs.nixos-wsl;
 
   mkWSLHost =
-    name: host:
+    hostName: host:
     let
       system = host.arch;
 
       specialArgs = {
-        inherit inputs;
-        hostName = name;
+        inherit inputs hostName;
         user = host.user;
+        homeModule = ./${hostName}/home.nix;
       };
     in
     lib.nixosSystem {
       inherit system specialArgs;
 
       modules = [
-        ./${name}
+        ./${hostName}
+
+        {
+          nixpkgs.overlays = overlays;
+        }
 
         nixos-wsl.nixosModules.default
-
-        {
-          nixpkgs.config.allowUnfreePredicate =
-            pkg:
-            builtins.elem (lib.getName pkg) [
-              "copilot-language-server"
-            ];
-        }
-
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            extraSpecialArgs = specialArgs;
-
-            users.${host.user.username} = ./${name}/home.nix;
-          };
-        }
-      ];
+      ]
+      ++ modules;
     };
-
 in
 lib.mapAttrs mkWSLHost hosts

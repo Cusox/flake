@@ -1,4 +1,5 @@
-{ pkgs, inputs, ... }:
+{ inputs, pkgs, ... }:
+
 let
   llm-agents = inputs.llm-agents;
 in

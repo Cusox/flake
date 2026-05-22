@@ -4,7 +4,7 @@
 }:
 {
   imports = [
-    ../../../home/wsl.nix
+    ../../../home/recipes/wsl.nix
   ];
 
   home = {

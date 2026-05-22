@@ -1,4 +1,5 @@
 { inputs, user, ... }:
+
 let
   sops-nix = inputs.sops-nix;
 in
