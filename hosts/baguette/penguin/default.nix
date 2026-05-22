@@ -3,7 +3,6 @@
 {
   imports = [
     ./garcon.nix
-    ./sops.nix
     ./user.nix
   ];
 

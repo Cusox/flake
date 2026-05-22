@@ -6,3 +6,8 @@ creation_rules:
     key_groups:
       - age:
           - *penguin
+
+  - path_regex: ^config/ssh/config\.yaml$
+    key_groups:
+      - age:
+          - *penguin
