@@ -25,10 +25,6 @@ in
 
     enableDefaultConfig = false;
 
-    includes = [
-      "~/.ssh/conf.d/*"
-    ];
-
     settings = {
       "*" = {
         ForwardAgent = false;
@@ -45,9 +41,4 @@ in
     }
     // lib.mapAttrs mkSSHSettings sshHosts;
   };
-
-  home.activation.ensureSSHConfDir = ''
-    mkdir -p "$HOME/.ssh/conf.d"
-    chmod 700 "$HOME/.ssh"
-  '';
 }

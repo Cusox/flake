@@ -6,8 +6,6 @@ in
 {
   imports = [
     ../../../home/recipes/all
-
-    ../../../home/secrets/ssh_private_config.nix
   ];
 
   home = {
