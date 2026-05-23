@@ -4,6 +4,8 @@ let
   username = user.username;
 in
 {
+  programs.zsh.enable = true;
+
   users.users = {
     ${username} = {
       isNormalUser = true;
