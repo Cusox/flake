@@ -3,7 +3,7 @@
 let
   username = user.username;
 
-  sshKeys = import ../../../config/keys.nix;
+  sshKeys = import ../../../config/ssh/keys.nix;
 in
 {
   users.users = {
