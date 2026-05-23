@@ -2,7 +2,7 @@
 
 {
   networking = {
-    hostName = hostName;
+    inherit hostName;
 
     resolvconf.enable = true;
 

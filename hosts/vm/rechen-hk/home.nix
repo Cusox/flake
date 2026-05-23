@@ -5,7 +5,7 @@ let
 in
 {
   imports = [
-    ../../../home/recipes/home.nix
+    ../../../home/recipes/minimal
 
     ../../../modules/home/ssh-keys.nix
   ];

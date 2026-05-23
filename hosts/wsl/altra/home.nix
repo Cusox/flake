@@ -12,7 +12,7 @@ in
   ];
 
   home = {
-    username = user.username;
+    inherit username;
 
     homeDirectory = "/home/${username}";
 

@@ -30,6 +30,14 @@ let
       ../modules/system/minimal
     ];
   };
+  vmHosts = mkHosts {
+    type = "vm";
+    path = ./vm;
+    modules = [
+      ../modules/nixpkgs.nix
+      ../modules/system/minimal
+    ];
+  };
   homeHosts = mkHosts {
     type = "home";
     path = ./home;
@@ -39,6 +47,6 @@ let
   };
 in
 {
-  nixosConfigurations = baguetteHosts // wslHosts;
+  nixosConfigurations = baguetteHosts // wslHosts // vmHosts;
   homeConfigurations = homeHosts;
 }

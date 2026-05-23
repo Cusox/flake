@@ -6,7 +6,7 @@ in
 {
   wsl = {
     enable = true;
-    defaultUser = user.username;
+    defaultUser = username;
 
     wslConf = {
       boot.systemd = true;

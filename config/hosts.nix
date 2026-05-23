@@ -25,4 +25,9 @@ in
     arch = x86l;
     user = users.gpu;
   };
+  rechen-hk = {
+    type = "vm";
+    arch = x86l;
+    user = users.default;
+  };
 }

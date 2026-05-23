@@ -1,10 +1,13 @@
 { pkgs, user, ... }:
 
+let
+  username = user.username;
+in
 {
   programs.zsh.enable = true;
 
   users.users = {
-    ${user.username} = {
+    ${username} = {
       linger = true;
       shell = pkgs.zsh;
     };
