@@ -6,6 +6,8 @@ in
 {
   imports = [
     ../../../home/recipes/home.nix
+
+    ../modules/home/ssh-keys.nix
   ];
 
   home = {

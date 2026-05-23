@@ -35,9 +35,6 @@ let
     path = ./home;
     modules = [
       ../modules/nixpkgs.nix
-      ../modules/home/sops.nix
-      ../modules/home/ssh-keys.nix
-      ../modules/home/ssh-private-config.nix
     ];
   };
 in
