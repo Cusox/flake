@@ -2,8 +2,6 @@
 
 let
   username = user.username;
-
-  sshKeys = import ../../../config/ssh/keys.nix;
 in
 {
   users.users = {
@@ -13,8 +11,6 @@ in
       linger = true;
       extraGroups = [ "wheel" ];
       shell = pkgs.zsh;
-
-      openssh.authorizedKeys.keys = builtins.attrValues sshKeys;
     };
   };
 
