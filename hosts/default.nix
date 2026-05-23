@@ -17,17 +17,28 @@ let
   baguetteHosts = mkHosts {
     type = "baguette";
     path = ./baguette;
-    modules = [ ../modules/system/minimal ];
+    modules = [
+      ../modules/nixpkgs.nix
+      ../modules/system/minimal
+      ../modules/system/ssh-private-config.nix
+    ];
   };
   wslHosts = mkHosts {
     type = "wsl";
     path = ./wsl;
-    modules = [ ../modules/system/minimal ];
+    modules = [
+      ../modules/nixpkgs.nix
+      ../modules/system/minimal
+      ../modules/system/ssh-private-config.nix
+    ];
   };
   homeHosts = mkHosts {
     type = "home";
     path = ./home;
-    modules = [ ../modules/nixpkgs.nix ];
+    modules = [
+      ../modules/nixpkgs.nix
+      ../modules/home/ssh-private-config.nix
+    ];
   };
 in
 {
