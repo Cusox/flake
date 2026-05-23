@@ -1,13 +1,22 @@
 keys:
   - &penguin age1r9eq9v6a0d42wud7whenfv4f29jgfv5t7qpzra0p36d6twsj2dhslppu56
+  - &altra age1m5s42688lsjkgqh8g66nxfc2vcxmz9v5jyar465zvck2rd8kdq5sd37upe
 
 creation_rules:
-  - path_regex: ^secrets/default\.yaml$
+  - path_regex: ^secrets/system\.yaml$
     key_groups:
       - age:
           - *penguin
+          - *altra
+
+  - path_regex: ^secrets/home\.yaml$
+    key_groups:
+      - age:
+          - *penguin
+          - *altra
 
   - path_regex: ^config/ssh/config\.yaml$
     key_groups:
       - age:
           - *penguin
+          - *altra
