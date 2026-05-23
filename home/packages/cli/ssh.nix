@@ -25,6 +25,10 @@ in
 
     enableDefaultConfig = false;
 
+    includes = [
+      "~/.ssh/conf.d/*"
+    ];
+
     settings = {
       "*" = {
         ForwardAgent = false;

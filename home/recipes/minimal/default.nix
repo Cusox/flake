@@ -16,5 +16,7 @@
     ../../packages/cli/starship.nix
     ../../packages/cli/zoxide.nix
     ../../packages/cli/zsh.nix
+
+    ../../packages/cli/ssh.nix
   ];
 }

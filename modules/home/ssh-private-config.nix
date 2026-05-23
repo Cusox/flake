@@ -1,10 +1,6 @@
 { config, ... }:
 
 {
-  programs.ssh.includes = [
-    "~/.ssh/conf.d/*"
-  ];
-
   sops.secrets.ssh_private_config = {
     sopsFile = ../../config/ssh/config.yaml;
     key = "private_config";
