@@ -1,9 +1,7 @@
-{ inputs, user, ... }:
+{ inputs, ... }:
 
 let
   sops-nix = inputs.sops-nix;
-
-  username = user.username;
 in
 {
   imports = [
@@ -11,8 +9,8 @@ in
   ];
 
   sops = {
-    age.keyFile = "/home/${username}/.config/sops/age/keys.txt";
+    age.keyFile = "/var/lib/sops-nix/keys.txt";
 
-    defaultSopsFile = ../../secrets/default.yaml;
+    defaultSopsFile = ../../secrets/system.yaml;
   };
 }

@@ -20,7 +20,6 @@ let
     modules = [
       ../modules/nixpkgs.nix
       ../modules/system/minimal
-      ../modules/system/ssh-private-config.nix
     ];
   };
   wslHosts = mkHosts {
@@ -29,7 +28,6 @@ let
     modules = [
       ../modules/nixpkgs.nix
       ../modules/system/minimal
-      ../modules/system/ssh-private-config.nix
     ];
   };
   homeHosts = mkHosts {
@@ -37,6 +35,7 @@ let
     path = ./home;
     modules = [
       ../modules/nixpkgs.nix
+      ../modules/home/sops.nix
       ../modules/home/ssh-keys.nix
       ../modules/home/ssh-private-config.nix
     ];
