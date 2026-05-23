@@ -5,6 +5,9 @@
 {
   imports = [
     ../../../home/recipes/wsl.nix
+
+    ../../../modules/home/sops.nix
+    ../../../modules/home/ssh-private-config.nix
   ];
 
   home = {
