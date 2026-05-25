@@ -23,18 +23,29 @@ let
 
   mkImage =
     {
+      type,
       path,
+      namePrefix,
       modules ? [ ],
       overlays ? [ ],
     }:
-    import path {
-      inherit
-        inputs
-        hosts
-        modules
-        overlays
-        ;
-    };
+    let
+      imageHosts = lib.filterAttrs (_: host: host.type == type) hosts;
+    in
+    lib.mapAttrs (
+      hostName: host:
+      lib.nameValuePair "${namePrefix}-${hostName}" (
+        import path {
+          inherit
+            inputs
+            hostName
+            host
+            modules
+            overlays
+            ;
+        }
+      )
+    ) imageHosts;
 
   baguetteHosts = mkHosts {
     type = "baguette";
@@ -57,7 +68,6 @@ let
     path = ./vps;
     modules = [
       ../modules/nixpkgs.nix
-      (import ../modules/system/boot.nix { devices = [ "/dev/vda" ]; })
       ../modules/system/minimal
     ];
   };
@@ -70,7 +80,9 @@ let
   };
 
   vpsBootstrapImage = mkImage {
+    type = "vps";
     path = ./vps/_bootstrap;
+    namePrefix = "vps-bootstrap-image";
     modules = [
       ../modules/nixpkgs.nix
       (import ../modules/system/boot.nix { devices = [ "/dev/vda" ]; })
@@ -82,7 +94,5 @@ in
 {
   nixosConfigurations = baguetteHosts // wslHosts // vpsHosts;
   homeConfigurations = homeHosts;
-  packages = forAllSystems (_system: {
-    vps-bootstrap-image = vpsBootstrapImage;
-  });
+  packages = forAllSystems (_system: vpsBootstrapImage);
 }

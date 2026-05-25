@@ -1,6 +1,7 @@
 {
   inputs,
-  hosts,
+  hostName,
+  host,
   modules ? [ ],
   overlays ? [ ],
   ...
@@ -9,13 +10,7 @@
 let
   lib = inputs.nixpkgs.lib;
 
-  hostEnv = import ../../../modules/hostenv.nix;
-
-  hostName = hostEnv.checkHostName;
-  hostConfigPath = hostEnv.checkHostName;
-
-  host = hosts.${hostName};
-  hostConfig = import hostConfigPath;
+  hostConfig = import ../../../config/vps/decrypted/${hostName}.nix;
 
   system = host.arch;
   user = host.user;

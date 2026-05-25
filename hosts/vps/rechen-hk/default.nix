@@ -5,6 +5,8 @@
     ../_bootstrap/network.nix
     ../_bootstrap/openssh.nix
     ../_bootstrap/user.nix
+
+    (import ../../../modules/system/boot.nix { devices = [ "/dev/vda" ]; })
   ];
 
   time.timeZone = "Asia/Shanghai";
