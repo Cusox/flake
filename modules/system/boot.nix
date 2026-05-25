@@ -1,4 +1,6 @@
-{ config, devices, ... }:
+{ devices }:
+
+{ config, ... }:
 
 {
   boot.kernelParams = [

@@ -9,22 +9,13 @@
 let
   lib = inputs.nixpkgs.lib;
 
-  hostName = builtins.getEnv "VPS_BOOTSTRAP_HOST";
-  checkHostName =
-    if hostName == "" then
-      throw "VPS_BOOTSTRAP_HOST is empty. Use scripts/build-vps-bootstrap-image.sh <host>."
-    else
-      hostName;
+  hostEnv = import ../../../modules/hostenv.nix;
 
-  hostConfigPath = builtins.getEnv "VPS_BOOTSTRAP_CONFIG";
-  checkHostConfigPath =
-    if hostConfigPath == "" then
-      throw "VPS_BOOTSTRAP_CONFIG is empty. Use scripts/build-vps-bootstrap-image.sh <host>."
-    else
-      hostConfigPath;
+  hostName = hostEnv.checkHostName;
+  hostConfigPath = hostEnv.checkHostName;
 
-  host = hosts.${checkHostName};
-  hostConfig = import checkHostConfigPath;
+  host = hosts.${hostName};
+  hostConfig = import hostConfigPath;
 
   system = host.arch;
   user = host.user;

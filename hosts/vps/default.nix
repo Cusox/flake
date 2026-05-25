@@ -17,6 +17,7 @@ let
       specialArgs = {
         inherit inputs hostName;
         user = host.user;
+        hostConfig = import ../../config/vps/decrypted/${hostName}.nix;
         homeModule = ./${hostName}/home.nix;
       };
     in

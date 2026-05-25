@@ -11,7 +11,7 @@ in
   home = {
     inherit username;
 
-    homeDirectory = "/home/${username}";
+    homeDirectory = "/${username}";
 
     stateVersion = "26.05";
   };
