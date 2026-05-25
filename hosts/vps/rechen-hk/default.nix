@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../_bootstrap/filesystem.nix
     ../_bootstrap/network.nix
     ../_bootstrap/openssh.nix
     ../_bootstrap/user.nix

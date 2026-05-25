@@ -32,7 +32,7 @@ let
     let
       imageHosts = lib.filterAttrs (_: host: host.type == type) hosts;
     in
-    lib.mapAttrs (
+    lib.mapAttrs' (
       hostName: host:
       lib.nameValuePair "${namePrefix}-${hostName}" (
         import path {

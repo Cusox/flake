@@ -9,6 +9,8 @@ let
   nixpkgs = inputs.nixpkgs;
   lib = nixpkgs.lib;
 
+  hostConfigPath = (import ../../modules/hostenv.nix).checkHostConfigPath;
+
   mkVPSHost =
     hostName: host:
     let
@@ -17,7 +19,7 @@ let
       specialArgs = {
         inherit inputs hostName;
         user = host.user;
-        hostConfig = import ../../config/vps/decrypted/${hostName}.nix;
+        hostConfig = import "${hostConfigPath}/${hostName}.nix";
         homeModule = ./${hostName}/home.nix;
       };
     in

@@ -10,7 +10,9 @@
 let
   lib = inputs.nixpkgs.lib;
 
-  hostConfig = import ../../../config/vps/decrypted/${hostName}.nix;
+  hostConfigPath = (import ../../../modules/hostenv.nix).checkHostConfigPath;
+
+  hostConfig = import "${hostConfigPath}/${hostName}.nix";
 
   system = host.arch;
   user = host.user;
@@ -38,4 +40,4 @@ let
   };
 
 in
-bootstrap.config.system.build.diskoImage
+bootstrap.config.system.build.diskoImages

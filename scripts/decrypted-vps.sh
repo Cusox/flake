@@ -40,3 +40,7 @@ done
 if [ "$found" -eq 0 ]; then
     echo "no encrypted .nix files found in $encrypted_dir"
 fi
+
+echo
+echo "Please input commands manually:"
+echo "export HOST_CONFIG='$decrypted_dir'"
