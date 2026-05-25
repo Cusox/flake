@@ -20,3 +20,10 @@ creation_rules:
       - age:
           - *penguin
           - *altra
+
+  - path_regex: ^config/vps/.+$
+    key_groups:
+      - age:
+          - *penguin
+          - *altra
+

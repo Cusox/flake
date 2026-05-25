@@ -6,8 +6,6 @@ in
 {
   imports = [
     ../../../home/recipes/minimal
-
-    ../../../modules/home/ssh-keys.nix
   ];
 
   home = {

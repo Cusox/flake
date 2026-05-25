@@ -9,7 +9,7 @@ let
   nixpkgs = inputs.nixpkgs;
   lib = nixpkgs.lib;
 
-  mkVMHost =
+  mkVPSHost =
     hostName: host:
     let
       system = host.arch;
@@ -33,4 +33,4 @@ let
       ++ modules;
     };
 in
-lib.mapAttrs mkVMHost hosts
+lib.mapAttrs mkVPSHost hosts

@@ -11,6 +11,13 @@
 
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    impermance.url = "github:nix-community/impermanence";
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -38,5 +45,6 @@
     {
       nixosConfigurations = hostOutputs.nixosConfigurations;
       homeConfigurations = hostOutputs.homeConfigurations;
+      packages = hostOutputs.packages;
     };
 }

@@ -15,4 +15,8 @@
     username = "jiaji";
     useremail = "cusoxlee@gmail.com";
   };
+  root = {
+    username = "root";
+    useremail = "cusoxlee@gmail.com";
+  };
 }

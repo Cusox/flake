@@ -26,8 +26,11 @@ in
     user = users.gpu;
   };
   rechen-hk = {
-    type = "vm";
+    type = "vps";
     arch = x86l;
-    user = users.default;
+    user = users.root;
+    roles = [
+      "nano"
+    ];
   };
 }
