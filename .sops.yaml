@@ -25,7 +25,7 @@ creation_rules:
           - *altra
           - *omit
 
-  - path_regex: ^config/vps/.+$
+  - path_regex: ^config/vps/encrypted/.+$
     key_groups:
       - age:
           - *penguin
