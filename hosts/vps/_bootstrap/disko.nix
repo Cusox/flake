@@ -43,31 +43,41 @@
             nix = {
               size = "100%";
               content = {
-                type = "filesystem";
-                format = "btrfs";
+                type = "btrfs";
                 extraArgs = [
                   "-L"
                   "NIX"
                 ];
-                mountpoint = "/nix";
-                mountOptions = [
-                  "compress-force=zstd"
-                  "nosuid"
-                  "nodev"
-                ];
+                subvolumes = {
+                  "/root" = {
+                    mountpoint = "/";
+                    mountOptions = [
+                      "compress-force=zstd"
+                    ];
+                  };
+
+                  "/nix" = {
+                    mountpoint = "/nix";
+                    mountOptions = [
+                      "compress-force=zstd"
+                      "nosuid"
+                      "nodev"
+                    ];
+                  };
+
+                  "/persist" = {
+                    mountpoint = "/nix/persist";
+                    mountOptions = [
+                      "compress-force=zstd"
+                      "nosuid"
+                      "nodev"
+                    ];
+                  };
+                };
               };
             };
           };
         };
-      };
-      nodev."/" = {
-        fsType = "tmpfs";
-        mountOptions = [
-          "relatime"
-          "mode=755"
-          "nosuid"
-          "nodev"
-        ];
       };
     };
   };

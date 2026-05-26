@@ -1,12 +1,10 @@
 {
   fileSystems."/" = {
-    device = "tmpfs";
-    fsType = "tmpfs";
+    device = "/dev/disk/by-label/NIX";
+    fsType = "btrfs";
     options = [
-      "relatime"
-      "mode=755"
-      "nosuid"
-      "nodev"
+      "subvol=/root"
+      "compress-force=zstd"
     ];
   };
 
@@ -23,6 +21,19 @@
     device = "/dev/disk/by-label/NIX";
     fsType = "btrfs";
     options = [
+      "subvol=/nix"
+      "compress-force=zstd"
+      "nosuid"
+      "nodev"
+    ];
+  };
+
+  fileSystems."/nix/persist" = {
+    device = "/dev/disk/by-label/NIX";
+    fsType = "btrfs";
+    neededForBoot = true;
+    options = [
+      "subvol=/persist"
       "compress-force=zstd"
       "nosuid"
       "nodev"
