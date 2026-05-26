@@ -8,6 +8,8 @@
     ../_bootstrap/user.nix
 
     (import ../../../modules/system/boot.nix { devices = [ "/dev/vda" ]; })
+
+    ./persistence.nix
   ];
 
   time.timeZone = "Asia/Shanghai";
