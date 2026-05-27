@@ -8,7 +8,7 @@ in
     inputs.impermance.nixosModules.impermanence
   ];
 
-  environment.persistence."/nix/persistent" = {
+  environment.persistence."/nix/persist" = {
     enable = true;
     hideMounts = true;
     directories = [

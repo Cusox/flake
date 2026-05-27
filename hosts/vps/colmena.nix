@@ -20,7 +20,7 @@ let
       hostConfig = import "${hostConfigPath}/${hostName}.nix";
 
       specialArgs = {
-        inherit inputs hostName hostConfig;
+        inherit hostName hostConfig;
         user = host.user;
         homeModule = ./${hostName}/home.nix;
       };
@@ -33,7 +33,7 @@ let
       ++ modules;
 
       deployment = {
-        targetHost = hostConfig.network.ip.address;
+        targetHost = hostConfig.ssh.ip;
         targetUser = "root";
         targetPort = hostConfig.ssh.port;
 
@@ -50,6 +50,10 @@ colmena.lib.makeHive (
       nixpkgs = import nixpkgs {
         system = "x86_64-linux";
         inherit overlays;
+      };
+
+      specialArgs = {
+        inherit inputs;
       };
     };
   }
