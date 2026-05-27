@@ -90,9 +90,18 @@ let
     ];
   };
 
+  colmenaHive = mkHosts {
+    type = "vps";
+    path = ./vps/colmena.nix;
+    modules = [
+      ../modules/nixpkgs.nix
+      ../modules/system/minimal
+    ];
+  };
 in
 {
   nixosConfigurations = baguetteHosts // wslHosts // vpsHosts;
   homeConfigurations = homeHosts;
   packages = forAllSystems (_system: vpsBootstrapImage);
+  inherit colmenaHive;
 }

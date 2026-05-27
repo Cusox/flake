@@ -48,5 +48,6 @@
       nixosConfigurations = hostOutputs.nixosConfigurations;
       homeConfigurations = hostOutputs.homeConfigurations;
       packages = hostOutputs.packages;
+      colmenaHive = hostOutputs.colmenaHive;
     };
 }
