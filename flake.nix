@@ -28,6 +28,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    colmena.url = "github:zhaofengli/colmena";
+
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
