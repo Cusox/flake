@@ -10,5 +10,6 @@
       PasswordAuthentication = false;
       PermitRootLogin = lib.mkForce "prohibit-password";
     };
+    hostKeys = [ ];
   };
 }
