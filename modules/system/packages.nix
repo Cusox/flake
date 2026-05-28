@@ -8,6 +8,7 @@
       git
       curl
       wget
+      kitty.terminfo
     ];
 
     pathsToLink = [
