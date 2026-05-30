@@ -18,14 +18,14 @@ creation_rules:
           - *altra
           - *omit
 
-  - path_regex: ^config/ssh/config\.yaml$
+  - path_regex: ^secrets/ssh/config\.yaml$
     key_groups:
       - age:
           - *penguin
           - *altra
           - *omit
 
-  - path_regex: ^config/vps/encrypted/.+$
+  - path_regex: ^secrets/vps/encrypted/.+$
     key_groups:
       - age:
           - *penguin

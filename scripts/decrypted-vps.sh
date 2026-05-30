@@ -2,8 +2,8 @@
 set -euo pipefail
 
 repo_root="$(git rev-parse --show-toplevel)"
-encrypted_dir="$repo_root/config/vps/encrypted"
-decrypted_dir="$repo_root/config/vps/decrypted"
+encrypted_dir="$repo_root/secrets/vps/encrypted"
+decrypted_dir="$repo_root/secrets/vps/decrypted"
 
 if ! command -v sops >/dev/null 2>&1; then
     echo "error: sops is not installed or not in PATH" >&2

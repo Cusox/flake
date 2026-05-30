@@ -1,2 +1,2 @@
-config/vps/decrypted/*
-!config/vps/decrypted/.gitkeep
+secrets/vps/decrypted/*
+!secrets/vps/decrypted/.gitkeep

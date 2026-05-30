@@ -12,10 +12,10 @@ fi
 files=(
     "secrets/system.yaml"
     "secrets/home.yaml"
-    "config/ssh/config.yaml"
+    "secrets/ssh/config.yaml"
 )
 
-if [ -d "config/vps/encrypted" ]; then
+if [ -d "secrtes/vps/encrypted" ]; then
     while IFS= read -r -d '' file; do
         files+=("$file")
     done < <(find config/vps/encrypted -type f -name '*.nix' -print0)

@@ -4,7 +4,7 @@ in
 {
   checkHostConfigPath =
     if hostConfigPath == "" then
-      throw "HOST_CONFIG is empty. Use scripts/decrypted-vps.sh ."
+      throw "HOST_CONFIG is empty. Use './scripts/decrypted-vps.sh'."
     else
       hostConfigPath;
 }
