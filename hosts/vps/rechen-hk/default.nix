@@ -18,5 +18,9 @@
 
   services.dbus.enable = true;
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   system.stateVersion = "25.11";
 }
