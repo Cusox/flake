@@ -13,7 +13,7 @@ in
     merge-editor = "nvimdiff";
   };
 
-  merge-tool.nvimdiff = {
+  merge-tools.nvimdiff = {
     program = "nvim";
     merge-args = [
 
