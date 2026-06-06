@@ -15,10 +15,16 @@ files=(
     "secrets/ssh/config.yaml"
 )
 
-if [ -d "secrtes/vps/encrypted" ]; then
+if [ -d "secrets/vps/encrypted" ]; then
     while IFS= read -r -d '' file; do
         files+=("$file")
-    done < <(find config/vps/encrypted -type f -name '*.nix' -print0)
+    done < <(find secrets/vps/encrypted -type f -name '*.nix' -print0)
+fi
+
+if [ -d "secrets/docker" ]; then
+    while IFS= read -r -d '' file; do
+        files+=("$file")
+    done < <(find secrets/docker -type f -name '.env' -print0)
 fi
 
 for file in "${files[@]}"; do

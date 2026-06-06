@@ -2,6 +2,7 @@ keys:
   - &penguin age1st5g67qt6x9jsmnwq8e8cp3fdua6fy7gysu38y9g7p5f6w92qctsxwgvq9
   - &altra age1m5s42688lsjkgqh8g66nxfc2vcxmz9v5jyar465zvck2rd8kdq5sd37upe
   - &omit age1h3g9ksayddqlm4xmr6w7ru4ult3nfhta70pr7fspfkdznkj6lg7q44xr47
+  - &rechen-hk age138pwn5y5vqaz4qlmmfepydeagn2gj3znfl9vh60thf6q0jdkccxsfdyfa0
 
 creation_rules:
   - path_regex: ^secrets/system\.yaml$
@@ -32,3 +33,10 @@ creation_rules:
           - *altra
           - *omit
 
+  - path_regex: ^secrets/docker/[^/]+/\.env$
+    key_groups:
+      - age:
+          - *penguin
+          - *altra
+          - *omit
+          - *rechen-hk

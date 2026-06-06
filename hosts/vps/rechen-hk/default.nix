@@ -10,6 +10,7 @@
     (import ../../../modules/system/boot.nix { devices = [ "/dev/vda" ]; })
 
     ./persistence.nix
+    ./docker.nix
   ];
 
   time.timeZone = "Asia/Shanghai";
@@ -17,10 +18,6 @@
   networking.hostName = hostName;
 
   services.dbus.enable = true;
-
-  virtualisation.docker = {
-    enable = true;
-  };
 
   system.stateVersion = "25.11";
 }
