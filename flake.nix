@@ -24,7 +24,7 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     disko = {
-      url = "github:nix-community/disko/latest";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
