@@ -12,11 +12,11 @@
     ../../packages/cli/fzf.nix
     ../../packages/cli/htop.nix
     ../../packages/cli/pay-respects.nix
-    ../../packages/cli/sops.nix
     ../../packages/cli/starship.nix
     ../../packages/cli/zoxide.nix
     ../../packages/cli/zsh.nix
 
+    ../../packages/cli/sops.nix
     ../../packages/cli/ssh.nix
   ];
 }
