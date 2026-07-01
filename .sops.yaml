@@ -5,21 +5,14 @@ keys:
   - &rechen-hk age138pwn5y5vqaz4qlmmfepydeagn2gj3znfl9vh60thf6q0jdkccxsfdyfa0
 
 creation_rules:
-  - path_regex: ^secrets/system\.yaml$
+  - path_regex: ^secrets/global\.yaml$
     key_groups:
       - age:
           - *penguin
           - *altra
           - *omit
 
-  - path_regex: ^secrets/home\.yaml$
-    key_groups:
-      - age:
-          - *penguin
-          - *altra
-          - *omit
-
-  - path_regex: ^secrets/ssh/config\.yaml$
+  - path_regex: ^secrets/ssh\.yaml$
     key_groups:
       - age:
           - *penguin

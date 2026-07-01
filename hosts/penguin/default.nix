@@ -4,6 +4,7 @@ let
     "nix"
     "graphics"
     "sops"
+    "ssh"
   ];
   packages = [
     "system"
