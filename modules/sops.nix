@@ -1,6 +1,5 @@
 {
   inputs,
-  config,
   lib,
   ...
 }:
@@ -21,7 +20,7 @@ in
         age.keyFile = "/etc/sops/age/keys.txt";
       };
     };
-    homeManager.sops = {
+    homeManager.sops = { config, ... }: {
       imports = [
         inputs.sops-nix.homeManagerModules.sops
       ];
