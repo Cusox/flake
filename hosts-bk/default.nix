@@ -47,14 +47,6 @@ let
       )
     ) imageHosts;
 
-  baguetteHosts = mkHosts {
-    type = "baguette";
-    path = ./baguette;
-    modules = [
-      ../modules/nixpkgs.nix
-      ../modules/system/minimal
-    ];
-  };
   wslHosts = mkHosts {
     type = "wsl";
     path = ./wsl;
@@ -100,7 +92,7 @@ let
   };
 in
 {
-  nixosConfigurations = baguetteHosts // wslHosts // vpsHosts;
+  nixosConfigurations = wslHosts // vpsHosts;
   homeConfigurations = homeHosts;
   packages = forAllSystems (_system: vpsBootstrapImage);
   inherit colmenaHive;
