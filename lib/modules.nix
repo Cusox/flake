@@ -24,7 +24,7 @@
           imports = [ inputs.home-manager.nixosModules.home-manager ];
 
           home-manager.users.${user}.imports = map (
-            module: config.flake.modules.packages.homeManager.${module} or { }
+            module: config.flake.modules.homeManager.${module} or { }
           ) modules;
         }
       ]
