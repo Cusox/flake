@@ -33,6 +33,7 @@ in
 {
   flake.lib.mkSystem = {
     baguette = mkNixOS "x86_64-linux" "baguette";
+    wsl = mkNixOS "x86_64-linux" "wsl";
     linux = mkNixOS "x86_64-linux" "nixos";
   };
 }

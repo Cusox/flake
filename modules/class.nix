@@ -1,9 +1,14 @@
 { inputs, ... }:
 {
   flake.modules = {
-    "baguette" = {
+    baguette = {
       imports = [
         inputs.nixos-crostini.nixosModules.baguette
+      ];
+    };
+    wsl = {
+      imports = [
+        inputs.nixos-wsl.nixosModules.default
       ];
     };
   };
