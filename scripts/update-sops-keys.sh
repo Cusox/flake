@@ -10,21 +10,20 @@ if ! command -v sops >/dev/null 2>&1; then
 fi
 
 files=(
-    "secrets/system.yaml"
-    "secrets/home.yaml"
-    "secrets/ssh/config.yaml"
+    "secrets/global.yaml"
+    "secrets/ssh.yaml"
 )
-
-if [ -d "secrets/vps/encrypted" ]; then
-    while IFS= read -r -d '' file; do
-        files+=("$file")
-    done < <(find secrets/vps/encrypted -type f -name '*.nix' -print0)
-fi
 
 if [ -d "secrets/docker" ]; then
     while IFS= read -r -d '' file; do
         files+=("$file")
     done < <(find secrets/docker -type f -name '.env' -print0)
+fi
+
+if [ -d "secrets/vps/encrypted" ]; then
+    while IFS= read -r -d '' file; do
+        files+=("$file")
+    done < <(find secrets/vps/encrypted -type f -name '*.nix' -print0)
 fi
 
 for file in "${files[@]}"; do
