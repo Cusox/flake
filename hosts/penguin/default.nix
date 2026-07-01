@@ -1,5 +1,9 @@
 { config, ... }:
 let
+  modules = [
+    "nix"
+    "graphics"
+  ];
   packages = [
     "system"
     "fonts"
@@ -34,7 +38,11 @@ in
 {
   flake.nixosConfigurations.penguin = config.flake.lib.mkSystem.baguette "penguin" "chronos";
   flake.hosts.penguin = {
-    imports = config.flake.lib.loadNixOSAndHMPackages config packages "chronos" ++ [
+    imports = [
+      (config.flake.lib.loadNixOSAndHMModules config modules "chronos")
+      (config.flake.lib.loadNixOSAndHMPackages config packages "chronos")
+    ]
+    ++ [
       ./_garcon.nix
       ./_user.nix
     ];
