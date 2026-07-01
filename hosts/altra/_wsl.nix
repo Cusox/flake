@@ -1,12 +1,9 @@
-{ pkgs, user, ... }:
+{ pkgs, ... }:
 
-let
-  username = user.username;
-in
 {
   wsl = {
     enable = true;
-    defaultUser = username;
+    defaultUser = "cusox";
 
     wslConf = {
       boot.systemd = true;

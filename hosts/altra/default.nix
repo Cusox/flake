@@ -1,0 +1,51 @@
+{ config, ... }:
+let
+  modules = [
+    "nix"
+    "sops"
+    "ssh"
+  ];
+  packages = [
+    "system"
+    "fonts"
+
+    "zsh"
+    "starship"
+
+    "bat"
+    "delta"
+    "dust"
+    "eza"
+    "fastfetch"
+    "fd"
+    "fzf"
+    "htop"
+    "procs"
+    "ripgrep"
+    "zoxide"
+
+    "atuin"
+    "git"
+    "jj"
+    "pay-respects"
+    "sops"
+    "zellij"
+
+    "nvim"
+    "rio-wsl"
+    "pi"
+  ];
+in
+{
+  flake.nixosConfigurations.altra = config.flake.lib.mkSystem.wsl "altra" "cusox";
+  flake.hosts.altra = {
+    imports =
+      config.flake.lib.loadNixOSAndHMModules config modules "cusox"
+      ++ config.flake.lib.loadNixOSAndHMPackages config packages "cusox"
+      ++ [
+        ./_wsl.nix
+        ./_user.nix
+        ./_networking.nix
+      ];
+  };
+}

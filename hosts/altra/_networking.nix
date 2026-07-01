@@ -1,9 +1,5 @@
-{ hostName, ... }:
-
 {
   networking = {
-    inherit hostName;
-
     resolvconf.enable = true;
 
     nameservers = [
