@@ -3,6 +3,7 @@ let
   modules = [
     "nix"
     "graphics"
+    "sops"
   ];
   packages = [
     "system"
