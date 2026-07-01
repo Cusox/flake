@@ -11,7 +11,7 @@ let
       inherit system;
       modules = [
         config.flake.hosts.${host}
-        config.flake.modules.${cls}
+        config.flake.modules.nixos.${cls}
         config.flake.modules.nixos.homeManager
         {
           home-manager.users.${user}.imports = [

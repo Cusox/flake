@@ -1,6 +1,6 @@
 { inputs, ... }:
 {
-  flake.modules = {
+  flake.modules.nixos = {
     baguette = {
       imports = [
         inputs.nixos-crostini.nixosModules.baguette
