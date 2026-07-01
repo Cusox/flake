@@ -38,13 +38,12 @@ in
 {
   flake.nixosConfigurations.penguin = config.flake.lib.mkSystem.baguette "penguin" "chronos";
   flake.hosts.penguin = {
-    imports = [
-      (config.flake.lib.loadNixOSAndHMModules config modules "chronos")
-      (config.flake.lib.loadNixOSAndHMPackages config packages "chronos")
-    ]
-    ++ [
-      ./_garcon.nix
-      ./_user.nix
-    ];
+    imports =
+      config.flake.lib.loadNixOSAndHMModules config modules "chronos"
+      ++ config.flake.lib.loadNixOSAndHMPackages config packages "chronos"
+      ++ [
+        ./_garcon.nix
+        ./_user.nix
+      ];
   };
 }
